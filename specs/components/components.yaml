@@ -1,0 +1,38 @@
+openapi: "3.0.1"
+info:
+  version: "1.0.0"
+  title: Simple Swagger API
+servers:
+  - url: http://example.com/v1
+paths:
+  /recipe:
+    get:
+      responses:
+        200:
+          description: 你好
+          content:
+            application/json:
+              schema:
+                properties:
+                  recipe:
+                    $ref: '#/components/schemas/Recipe'
+components:
+  schemas:
+    Recipe:
+      properties:
+        id:
+          type: integer
+          example: 10555555
+        image:
+          $ref: '#/components/schemas/Image'
+    Image:
+      properties:
+        width:
+          type: integer
+          example: 640
+        height:
+          type: integer
+          example: 960
+        url:
+          type: string
+          example: "https://example.com/foo.jpg"
