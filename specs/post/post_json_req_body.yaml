@@ -7,10 +7,25 @@ servers:
 paths:
   /hello:
     get:
-      description: 获取你好信息
       responses:
         200:
           description: 你好
+          content:
+            application/json:
+              schema:
+                properties:
+                  hello:
+                    $ref: '#/components/schemas/Hello'
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Hello'
+      responses:
+        200:
+          description: 你好的回复
           content:
             application/json:
               schema:
