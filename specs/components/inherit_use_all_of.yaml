@@ -1,0 +1,33 @@
+openapi: "3.0.1"
+info:
+  version: "1.0.0"
+  title: Simple Swagger API
+servers:
+  - url: http://example.com/v1
+paths:
+  /hello:
+    get:
+      description: 获取你好信息
+      responses:
+        200:
+          description: 你好
+          content:
+            application/json:
+              schema:
+                properties:
+                  hello:
+                    $ref: '#/components/schemas/Hello'
+components:
+  schemas:
+    User:
+      properties:
+        name:
+          type: string
+          example: xigua
+    Hello:
+      allOf:
+        - '#/components/schemas/User'
+        - properties:
+          msg:
+            type: string
+            example: good morning
