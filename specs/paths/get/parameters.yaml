@@ -10,7 +10,14 @@ paths:
       parameters:
         - in: query
           name: id
-          description: 欢迎 id
+          description: id
+          schema:
+            type: integer
+            format: int32
+          required: true
+        - in: query
+          name: time
+          description: id
           schema:
             type: integer
             format: int32
