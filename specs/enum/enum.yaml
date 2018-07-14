@@ -14,21 +14,33 @@ paths:
             application/json:
               schema:
                 properties:
-                  hello:
-                    $ref: '#/components/schemas/Hello'
+                  foo:
+                    $ref: '#/components/schemas/Foo'
+                  bar:
+                    $ref: '#/components/schemas/Bar'
 components:
   schemas:
-    Hello:
+    Foo:
       properties:
         name:
           type: string
           enum:
-            - foo
-            - bar
-            - baz
+            - a
+            - b
+            - c
         kind:
           type: integer
           enum:
             - 1
             - 2
             - 3
+    Bar:
+      properties:
+        baz:
+          $ref: '#/components/schemas/Baz'
+    Baz:
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 3
