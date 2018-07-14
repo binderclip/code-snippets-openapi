@@ -20,6 +20,10 @@ paths:
                       oneOf:
                         - $ref: '#/components/schemas/ImageMsg'
                         - $ref: '#/components/schemas/TextMsg'
+                  msg:
+                    oneOf:
+                      - $ref: '#/components/schemas/ImageMsg'
+                      - $ref: '#/components/schemas/TextMsg'
 components:
   schemas:
     TextMsg:
